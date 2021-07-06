@@ -1,0 +1,158 @@
+body {
+    margin:0px;
+   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+   background-size: 400% 400%;
+   animation: gradient 15s ease infinite;
+   height: 50em;
+}
+
+@keyframes gradient {
+   0% {
+       background-position: 0% 50%;
+   }
+   50% {
+       background-position: 100% 50%;
+   }
+   100% {
+       background-position: 0% 50%;
+   }
+} 
+
+.nav { /*navigation ul format*/
+   list-style:none;
+   padding: 0;
+   padding-top: 13px;
+   text-align:center;
+   white-space: nowrap;
+}
+
+.nav li { /*navigation list format*/
+   display: inline;
+   font-family: 'Open sans', sans-serif;
+   font-weight: normal;
+   font-stretch: expanded;
+   font-size: 105%;
+   padding: 3%;
+}
+
+.wrapper { /*nav background*/
+   background:white;
+   height: 50px;
+}
+
+.wrapper a { /*navigation text*/
+	text-decoration:none;
+	text-align:center;
+	position: relative;
+	color:#383838;
+
+}
+
+
+.wrapper a:before {
+	content:"";
+	position:absolute;
+	width:100%;
+	height: .1em;
+	bottom:0;
+	left:0;
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	transform: scaleX(0);
+	transition: all 0.3s ease-in-out 0s;
+}
+
+.wrapper a:hover::before {
+	transform: scaleX(1);
+}
+
+.main { /*main white container*/
+    background:white;
+	margin: 3.1252em auto;
+	height: 35em;
+	width: 90%;
+	padding-top: 20px;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+      } 
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+}
+
+img {
+    transition: transform 0.2s;
+	transition-timing-function: ease;
+}
+img:hover {
+    transform: scale(1.1);
+}
+
+.vl {
+    border-radius: 100px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    width: .1em;
+    height: 10em;
+    margin-bottom:5em;
+}
+
+.hl {
+    border-radius: 100px;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    width: 6em;
+    height: .09em; 
+    margin: 0.9em;
+}
+
+.servicecontainer {
+    margin-top: 1em;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open sans', sans-serif;
+    font-size: 3.5em;
+    font-weight: normal;
+}
+
+.servicetitle {
+    animation: slideUp 1s;
+}
+
+.servicetable {
+    font-family: 'Open sans', sans-serif;
+    margin: 5em auto;
+}
+
+#gcp {
+    width:13em;
+    height: 13em;
+    margin: 0 1em 0 4em;
+}
+
+#belton {
+    width: 18em;
+    height: 10em;
+    margin-right: 1em;
+}
+.para {
+    width: 18em;
+    height: 15em;
+    font-family: 'Open sans', sans-serif;
+    color:#383838;
+    padding-left: 2em;
+    padding-right: 4em;
+    padding-bottom: 3em;
+    animation: slideUp 1s;
+}
+
