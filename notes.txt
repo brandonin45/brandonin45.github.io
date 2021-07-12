@@ -1,0 +1,6 @@
+Modify js files in src
+Watch src with jsx preprocessor: npx babel --watch src --out-dir . --presets react-app/prod
+
+If preprocessor is not install, run:
+	npm init -y
+	npm install babel-cli@6 babel-preset-react-app@3

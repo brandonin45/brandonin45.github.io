@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Portfolio Website</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+
+        <!-- Load React. -->
+        <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+        <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+        
+    </head>
+
+    <body>
+        <div class=overflow-wrap>
+            <!-- HOME -->
+            <section id="home-wrapper">
+                <div class="canvas-wrapper">
+                    <canvas id="canvas"></canvas>
+                    <div id="intro-wrap">Introduction wrapper flexible?
+                        <div id=react></div>
+                    </div>
+                </div>
+                <div class="home"> 
+                    <h1>HOME</h1>
+                </div>
+            </section>
+            
+            
+            <!-- ABOUT ME -->
+            <section id=about>
+                <div class="home"> 
+                    <h1>SECTION</h1>
+                </div>
+            </section>
+
+            <!-- QUALIFICATIONS -->
+            <section id=quali></section>  
+
+            <!-- PORTFOLIO -->
+            <section id=portfolio></section>
+            
+            <!-- CONTACT -->
+            <section id=contact></section>
+        </div>
+        
+        
+        <div id=react></div>
+        <div class=creact></div>
+
+
+        <!-- Load our React component. -->
+        <script  src="index.js"></script>
+        <script  src="canvas.js"></script>
+    </body>
+</html>
