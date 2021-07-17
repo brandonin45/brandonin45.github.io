@@ -6,7 +6,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         
         <link rel="stylesheet" type="text/css" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet"> <!-- font-family: 'Open Sans', sans-serif; -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet"> <!-- font-family: 'Raleway', sans-serif; -->
+
 
         <!-- Load React. -->
         <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
@@ -21,31 +25,56 @@
             <section id="home-wrapper">
                 <div class="canvas-wrapper">
                     <canvas id="canvas"></canvas>
-                    <div id="intro-wrap">Introduction wrapper flexible?
-                        <div id=react></div>
+                    <div id="intro-wrap">
+                        <div class="text">Hello, I'm
+                            <span class="highlight">Brandon Namphong</span>.
+                            <br>
+                            I'm a Software Engineer.
+                        </div>
+                        <div class="scroll-div"><i>View more content</i>
+                            <img src="img/narrow.png" width="8" heigth="8" id=arrow>
+                        </div>
                     </div>
                 </div>
-                <div class="home"> 
-                    <h1>HOME</h1>
-                </div>
+               <div class="flex-nav">
+                   <div class="link-wrap">
+                       <div id="link-home">HOME</div>
+                       <div id="link-about">ABOUT ME</div>
+                       <div id="link-quali">QUALIFICATIONS</div>
+                       <div id="link-portfolio">PORTFOLIO</div>
+                       <div id="link-contact">CONTACT</div>
+                   </div>
+               </div> 
             </section>
             
             
             <!-- ABOUT ME -->
             <section id=about>
                 <div class="home"> 
-                    <h1>SECTION</h1>
+                    <h1>ABOUT ME</h1>
                 </div>
             </section>
 
             <!-- QUALIFICATIONS -->
-            <section id=quali></section>  
+            <section id=quali>
+                <div class="home"> 
+                    <h1>QUALIFICATIONS</h1>
+                </div>
+            </section>  
 
             <!-- PORTFOLIO -->
-            <section id=portfolio></section>
+            <section id=portfolio>
+                <div class="home"> 
+                    <h1>PORTFOLIO</h1>
+                </div>
+            </section>
             
             <!-- CONTACT -->
-            <section id=contact></section>
+            <section id=contact>
+                <div class="home"> 
+                    <h1>CONTACT</h1>
+                </div>
+            </section>
         </div>
         
         
@@ -56,5 +85,6 @@
         <!-- Load our React component. -->
         <script  src="index.js"></script>
         <script  src="canvas.js"></script>
+        <script  src="gen.js"></script>
     </body>
 </html>

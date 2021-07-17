@@ -102,199 +102,101 @@ function myFunction(x) {
   x.addListener(myFunction) // Attach listener function on state changes
   */
 
+var canvas = document.getElementById( 'canvas' ),
+    c = canvas.getContext( '2d' ),
+    w = canvas.width = window.innerWidth,
+    h = canvas.height = window.innerHeight;
 
-//var c = document.getElementById("canvas");
-//var ctx = c.getContext("webgl");
+const mouse = {
+  x: window.innerWidth / 2,
+  y: window.innerHeight / 2
+};
 
-/* webgl learning code
-function main() {
-    const canvas = document.getElementById("canvas");
-    // Initialize the GL context
-    const gl = canvas.getContext("webgl");
+const colors = [
+  "#FF3F8E", "#04C2C9", "#2E55C1"
+]
+
+addEventListener('mousemove', event => {
+  mouse.x = event.clientX;
+  mouse.y = event.clientY;
+})
+
+addEventListener('resize', () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  init();
+})
+
+function randomIntfromRange(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
+function randomColor(colors) {
+  return colors[Math.floor(Math.random() * colors.length)];
+}
+
+function Particle(x, y, radius, color) {
+  this.x = x;
+  this.y = y;
+  this.radius = radius;
+  this.color = color;
+  this.radians = Math.random() * Math.PI * 2;  
+  this.velocity = 0.0005;
+  //this.distanceFromCenter = randomIntfromRange(100,900);
+  this.distanceFromCenter = {
+    x: randomIntfromRange(100, 900),
+    y: randomIntfromRange(100, 900)
+  };
   
-    // Only continue if WebGL is available and working
-    if (gl === null) {
-      alert("Unable to initialize WebGL. Your browser or machine may not support it.");
-      return;
+  
+  this.update = () => {
+    this.radians += this.velocity;
+    this.x = x + Math.cos(this.radians) * this.distanceFromCenter.x;
+    this.y = y + Math.sin(this.radians) * this.distanceFromCenter.y;
+    this.draw();
+  };
+
+  this.draw = () => {
+    c.shadowColor = 'white';
+    c.shadowBlur = 2;
+    c.beginPath();
+    
+    if(Math.abs(mouse.x-this.x) < 30 && Math.abs(mouse.y-this.y) < 30) {
+      c.arc(this.x, this.y, this.radius + 1, 0, Math.PI * 2, false);
+      c.fillStyle = this.color;
     }
-  
-    // Set clear color to black, fully opaque
-    gl.clearColor(0.0, 0.0, 0.0, 1.0);
-    // Clear the color buffer with specified clear color
-    gl.clear(gl.COLOR_BUFFER_BIT);
+    else {
+      c.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+      c.fillStyle = this.color;
+    }
+    
+    c.fill();
+    c.closePath();
+  };
+}
+
+let particles;
+function init() {
+  particles = [];
+
+  for (let i=0;i<120;i++) {
+    const radius = (Math.random()) + 1;
+    particles.push(new Particle(canvas.width / 2, canvas.height / 2, radius, randomColor(colors)));
   }
-  
-  window.onload = main;
-  */
-
-
-var canvas = document.getElementById( 'canvas' );
-var context = canvas.getContext( '2d' );
-
-var time = 0,
-    velocity = 0.1,
-    velocityTarget = 0.1,
-    width,
-    height,
-    lastX,
-    lastY;
-
-var MAX_OFFSET = 400;
-var SPACING = 4;
-var POINTS = MAX_OFFSET / SPACING;
-var PEAK = MAX_OFFSET * 0.25;
-var POINTS_PER_LAP = 6;
-var SHADOW_STRENGTH = 6;
-
-setup();
-
-function setup() {
-
-  resize();
-  step();
-  
-  window.addEventListener( 'resize', resize );
-  window.addEventListener( 'mousedown', onMouseDown );
-  document.addEventListener( 'touchstart', onTouchStart );
-  
 }
 
-function resize() {
+function animate() {
+  requestAnimationFrame(animate);
+  c.clearRect(0,0,canvas.width,canvas.height);
+  c.fillStyle = '#252934';
+  c.fillRect(0, 0, canvas.width, canvas.height);
 
-  width = canvas.width = window.innerWidth;
-  height = canvas.height = window.innerHeight;
-
-
-}
-
-function step() {
-  
-  time += velocity;
-  velocity += ( velocityTarget - velocity ) * 0.3;
-  
-  clear();
-  render();
-  
-  requestAnimationFrame( step );
-  
-}
-
-function clear() {
-  
-  context.clearRect( 0, 0, width, height );
-
-}
-
-function render() {
-  
-  var x, y,
-      cx = width/2,
-      cy = height/2;
-
-  context.globalCompositeOperation = 'lighter';
-  context.strokeStyle = '#fff';
-  context.shadowColor = '#fff';
-  context.lineWidth = 2;
-  context.beginPath();
-
-  for( var i = POINTS; i > 0; i -- ) {
-    
-    var value = i * SPACING + ( time % SPACING );
-    
-    var ax = Math.sin( value/POINTS_PER_LAP ) * Math.PI,
-        ay = Math.cos( value/POINTS_PER_LAP ) * Math.PI;
-
-    x = ax * value,
-    y = ay * value * 0.35;
-    
-    var o = 1 - ( Math.min( value, PEAK ) / PEAK );
-    
-    y -= Math.pow( o, 2 ) * 200;
-    y += 200 * value / MAX_OFFSET;
-    y += x / cx * width * 0.1;
-    
-    context.globalAlpha = 1 - ( value / MAX_OFFSET );
-    context.shadowBlur = SHADOW_STRENGTH * o;
-  
-    context.lineTo( cx + x, cy + y );
-    context.stroke();
- 
-    context.beginPath();
-    context.moveTo( cx + x, cy + y );
-    
-  }
-
-  context.lineTo( cx, cy - 200 );
-  context.lineTo( cx, 0 );
-  context.stroke();
-  
-}
-
-function onMouseDown( event ) {
-  
-  lastX = event.clientX;
-  lastY = event.clientY;
-  
-  document.addEventListener( 'mousemove', onMouseMove );
-  document.addEventListener( 'mouseup', onMouseUp );
-  
-}
-
-function onMouseMove( event ) {
-  
-  var vx = ( event.clientX - lastX ) / 100;
-  var vy = ( event.clientY - lastY ) / 100;
-  
-  if( event.clientY < height/2 ) vx *= -1;
-  if( event.clientX > width/2 ) vy *= -1;
-  
-  velocityTarget = vx + vy;
-  
-  lastX = event.clientX;
-  lastY = event.clientY;
-  
-}
-
-function onMouseUp( event ) {
-  
-  document.removeEventListener( 'mousemove', onMouseMove );
-  document.removeEventListener( 'mouseup', onMouseUp );
-  
-}
-
-function onTouchStart( event ) {
-  
-  event.preventDefault();
-  
-  lastX = event.touches[0].clientX;
-  lastY = event.touches[0].clientY;
-  
-  document.addEventListener( 'touchmove', onTouchMove );
-  document.addEventListener( 'touchend', onTouchEnd );
-  
-}
-
-function onTouchMove( event ) {
-  
-  var vx = ( event.touches[0].clientX - lastX ) / 100;
-  var vy = ( event.touches[0].clientY - lastY ) / 100;
-  
-  if( event.touches[0].clientY < height/2 ) vx *= -1;
-  if( event.touches[0].clientX > width/2 ) vy *= -1;
-  
-  velocityTarget = vx + vy;
-  
-  lastX = event.touches[0].clientX;
-  lastY = event.touches[0].clientY;
-  
-}
-
-function onTouchEnd( event ) {
-  
-  document.removeEventListener( 'touchmove', onTouchMove );
-  document.removeEventListener( 'touchend', onTouchEnd );
-  
+  particles.forEach(particle => {
+    particle.update();
+  });  
 }
 
 
-
+init();
+animate();
