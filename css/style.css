@@ -2,7 +2,8 @@ html {
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
-	height: 500%
+	height: 500%;
+	font-size: 100%;
 }
 
 body {
@@ -10,6 +11,63 @@ body {
     background-size: 100% 100%;
     background-color: white;
 }
+
+@media (min-width: 1px) { 
+	.text { font-size: 1rem; }
+	.highlight { font-size: 1.2rem; }
+	.scroll-div { 	
+		padding: 6px 6px 6px 10px;
+		margin-top: 15px;
+		border-width: 1px;
+	}
+	.scroll-div i { 
+		font-size: 0.5rem;
+		padding-right: 8px;
+	 }
+	#arrow {
+		padding-right: 4px;
+		width: 0.3rem;
+		height: 0.5rem;
+	}
+
+} 
+@media (min-width:641px) { 
+	.text { font-size: 2rem; } 
+	.highlight { font-size: 2.2rem; }
+	.scroll-div { 
+		padding: 8px 8px 8px 10px;
+		margin-top: 20px;
+		border-width: 2px;
+	}
+	.scroll-div i { 
+		font-size: 0.7rem;
+		padding-right: 10px;
+	}
+	#arrow {
+		padding-right: 2px;
+		width: 0.4rem;
+		height: 0.7rem;
+	}
+
+} 
+@media (min-width:1008px) { 
+	.text { font-size: 2.8rem; }
+	.highlight { font-size: 3rem; }
+	.scroll-div { 
+		padding: 8px 8px 8px 10px;
+		margin-top: 20px;
+		border-width: 2px;
+	}
+	.scroll-div i { 
+		font-size: 1rem;
+		padding-right: 10px;
+	}
+	#arrow {
+		padding-right: 4px;
+		width: 0.5rem;
+		height: 1rem;
+	}
+ } 
 
 div.home {
     background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -27,7 +85,7 @@ div.home {
     text-align: center;
 	font-family: 'Open Sans', sans-serif;
 	font-weight: normal;
-	font-size: 7rem;
+	font-size: 5rem;
 }
 
 @keyframes gradient {
@@ -62,25 +120,23 @@ div.home {
 .text {
 	text-align: center;
 	color: white;
-	font-size: 32pt;
 	font-family: 'Raleway', sans-serif; 
 }
 
 .highlight {
 	color: #FF3F8E;
-	font-size: 33pt;
 }
 .scroll-div {
-	margin-top: 20px;
-	padding: 8px 8px 8px 10px;
 	display: flex;
 	justify-content: center;
 	text-align: center;
 	color: white;
 	font-family: 'Raleway', sans-serif;
-	border: 2px solid white;
-	transition: background-color 1s, border-color 1s;
+	border-style: solid;
+	border-color: white;
+	transition: background-color 1s, border-color 1s, size 1s;
 	position: relative;
+
 }
 
 .scroll-div:hover {
@@ -88,13 +144,6 @@ div.home {
 	border-color: #15d7d0;
 }
 
-.scroll-div i {
-	padding-right: 10px;
-}
-
-#arrow {
-	padding-right: 4px;
-}
 
 .flex-nav {
 	display: flex;
