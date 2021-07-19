@@ -127,11 +127,11 @@ var flex = document.querySelector(".flex-nav");
 var link = document.querySelector(".link-wrap div");
 function smallNav() {
     console.log("hi");
-    if (flex.style.height === "164px") { 
+    if (flex.style.height === "170px") { 
         flex.style.height = "50px";
     }
     else { 
-        flex.style.height = "164px";
+        flex.style.height = "170px";
     }
     
 }
