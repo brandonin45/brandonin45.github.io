@@ -28,6 +28,8 @@ var lhome = document.getElementById("link-home"),
 
 
 window.onscroll = function() {navEffect()};
+
+
 var navbar = document.querySelector(".flex-nav");
 var sticky = navbar.offsetTop;
 
@@ -79,7 +81,7 @@ function navEffect() {
         lhome.style.transition = "0.3s";
         lhome.style.color = "#FF3F8E";
     }
-  else if (window.pageYOffset >= aboutPos-100 && window.pageYOffset < qualiPos) {
+    else if (window.pageYOffset >= aboutPos-100 && window.pageYOffset < qualiPos) {
         console.log("about");
         lhome.style.color = "white";
         lhome.onmouseout = function() { lhome.style.color = "white"; };
@@ -90,7 +92,7 @@ function navEffect() {
         labout.style.color = "#FF3F8E";
         
     }   
-  else if (window.pageYOffset >= qualiPos && window.pageYOffset < portfolioPos) {
+    else if (window.pageYOffset >= qualiPos && window.pageYOffset < portfolioPos) {
         console.log("quali");
         lportfolio.style.color = "white";
         labout.style.color = "white";
@@ -121,8 +123,11 @@ function navEffect() {
         lcontact.style.transition = "0.3s";
         lcontact.style.color = "#FF3F8E";
     }
+
+    
 }
 
+// open and close mobile nav
 var flex = document.querySelector(".flex-nav");
 var link = document.querySelector(".link-wrap div");
 function smallNav() {
@@ -135,3 +140,46 @@ function smallNav() {
     }
     
 }
+
+var atitle = document.querySelector(".about-title");
+var titleline = document.querySelector("#title-line");
+var profile = document.querySelector(".profile");
+var aboutText = document.querySelector(".about-wrapper p");
+
+
+
+//debouncer for optimization
+function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	};
+};
+
+var aboutLoad = debounce(function() {
+    if (window.pageYOffset > atitle.offsetTop/5) { 
+        atitle.style.transform = "translateX(0px)";
+        atitle.style.opacity = "1";
+    }
+
+    if (window.pageYOffset > atitle.offsetTop/2) {
+        titleline.style.transform = "translateX(0px)";
+        titleline.style.opacity = "1";
+
+        profile.style.transform = "translateY(0px)";
+        profile.style.opacity = "1";
+        
+        aboutText.style.transform = "translateX(0px)";
+        aboutText.style.opacity = "1";
+    }
+}, 10, 1);
+
+window.addEventListener('scroll', aboutLoad);

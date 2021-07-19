@@ -248,6 +248,7 @@ div.home {
 	animation-name: slideIn;
 	animation-duration: 0.5s;
 	animation-timing-function: ease-out;
+	z-index: 2;
 }
 
 @keyframes slideIn {
@@ -274,10 +275,54 @@ div.home {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center
+	align-items: center;
+	margin-top: 5rem;
 }
 
+.about-wrapper p {
+	font-family: 'Raleway', sans-serif;
+	font-weight: bold;
+	font-size: 1.4rem;
+	text-align: center;
+	color: #444649;
+	margin: 0 15%;
+	transform: translateY(600px);
+	opacity: 0;
+	transition: transform 1.2s ease-out, opacity 2s ease-out;
+}
+
+.about-wrapper span {
+	color: #FF3F8E;
+}
+
+.about-title {
+	font-size: 3rem;
+	font-family: 'Raleway', sans-serif; 
+	font-weight: bold;
+	color: #444649;
+	transform: translateX(-400px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s;
+}
+
+#title-line {
+	width: 10rem;
+	height: 0.2rem;
+	background-color: #444649;
+	margin: 10px 0;
+	transform: translateX(-600px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s;
+}
+
+.profile {
+	transform: translateY(600px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 2s ease-out;
+}
 .profile img {
-	width: 5rem;
-	height: 5rem;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	width: 20rem;
+	height: 20rem;
 }
