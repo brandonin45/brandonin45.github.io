@@ -29,11 +29,35 @@ body {
 		width: 0.3rem;
 		height: 0.5rem;
 	}
-
+	.flex-nav {
+		/* mobile nav */
+		overflow: hidden;
+	}
+	.link-wrap {
+		/* mobile nav */
+		position: relative;
+		padding-top: 3rem;
+		font-size: 0.8rem;
+	}
+	.link-wrap div{
+		/* mobile nav */
+		float: none;
+		display: block;
+		padding-bottom: 8px;
+		margin: 0 15px;
+	}
+	.icon {
+		/* mobile nav */
+		position: absolute;
+		display: block;
+		float: right;
+		left: 0;
+		top: 0;
+	}
 } 
-@media (min-width:641px) { 
-	.text { font-size: 2rem; } 
-	.highlight { font-size: 2.2rem; }
+@media (min-width:479px) { 
+	.text { font-size: 1.8rem; } 
+	.highlight { font-size: 2rem; }
 	.scroll-div { 
 		padding: 8px 8px 8px 10px;
 		margin-top: 20px;
@@ -48,7 +72,28 @@ body {
 		width: 0.4rem;
 		height: 0.7rem;
 	}
-
+	.flex-nav {
+		/* big nav */
+		display: flex;
+		align-items: center;
+		justify-content: left;
+	}
+	.link-wrap {
+		/* big nav */
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding-top: 0.5rem;
+		font-size: 0.8rem;
+	}
+	.link-wrap div {
+		margin: 0 10px;
+	}
+	.icon {
+		/* big nav */
+		display: none;
+	}
 } 
 @media (min-width:1008px) { 
 	.text { font-size: 2.8rem; }
@@ -67,6 +112,28 @@ body {
 		width: 0.5rem;
 		height: 1rem;
 	}
+	.flex-nav {
+		/* big nav */
+		display: flex;
+		align-items: center;
+		justify-content: left;
+	}
+	.link-wrap {
+		/* big nav */
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		padding-top: 0.5rem;
+		font-size: 1rem;
+	}
+	.link-wrap div {
+		margin: 0 15px;
+	}
+	.icon {
+		/* big nav */
+		display: none;
+	}
  } 
 
 div.home {
@@ -77,6 +144,7 @@ div.home {
     animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-timing-function: ease;
+	overflow: hidden;
 }
 
 
@@ -145,28 +213,29 @@ div.home {
 }
 
 
+/* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 .flex-nav {
-	display: flex;
-	align-items: center;
-	justify-content: left;
 	background-color: #1b242f;
-	width: 100%;
 	height: 50px;
 	border-bottom: #15d7d0 3px solid;
+	transition: height 0.5s;
 }
 
+
 .link-wrap {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
 	color: white;
 	font-family: 'Raleway', sans-serif;
 }
 
 .link-wrap div{
-	margin: 0 20px;
 	transition: color 0.5s;
+}
+
+.icon img {
+	width: 1.3rem;
+	height: 1.3rem;
+	padding-left: 15px;
+	padding-top: 12px;
 }
 
 .sticky {
@@ -186,4 +255,6 @@ div.home {
 		transform: translateY(0px);
 	}
 }
+
+
 

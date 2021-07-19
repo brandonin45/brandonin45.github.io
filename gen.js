@@ -27,7 +27,7 @@ var lhome = document.getElementById("link-home"),
     lcontact = document.getElementById("link-contact");
 
 
-window.onscroll = function() {myFunction()};
+window.onscroll = function() {navEffect()};
 var navbar = document.querySelector(".flex-nav");
 var sticky = navbar.offsetTop;
 
@@ -47,11 +47,11 @@ var homePos = home.offsetTop,
     contactPos = contact.offsetTop;
 
 //navbar scroll to section
-lhome.onclick = function() { home.scrollIntoView(); };
-labout.onclick = function() { about.scrollIntoView(); };
-lquali.onclick = function() { quali.scrollIntoView(); };
-lportfolio.onclick = function() { portfolio.scrollIntoView(); };
-lcontact.onclick = function() { contact.scrollIntoView(); };
+lhome.onclick = function() { home.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
+labout.onclick = function() { about.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
+lquali.onclick = function() { quali.scrollIntoView(); if (window.innerWidth< 480) { smallNav(); }};
+lportfolio.onclick = function() { portfolio.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
+lcontact.onclick = function() { contact.scrollIntoView(); if (window.innerWidth< 480) { smallNav(); }};
 
 //hover and highlight animations
 lhome.onmouseover = function() { lhome.style.color = "#FF3F8E"; };
@@ -67,7 +67,7 @@ lcontact.onmouseout = function() { lcontact.style.color = "white"; };
 
 
 // **CHANGE PIXELS FOR BETTER RECOGNITION**
-function myFunction() {
+function navEffect() {
   if (window.pageYOffset >= sticky) { navbar.classList.add("sticky"); } 
   else { navbar.classList.remove("sticky"); }
 
@@ -121,7 +121,17 @@ function myFunction() {
         lcontact.style.transition = "0.3s";
         lcontact.style.color = "#FF3F8E";
     }
-
-
 }
 
+var flex = document.querySelector(".flex-nav");
+var link = document.querySelector(".link-wrap div");
+function smallNav() {
+    console.log("hi");
+    if (flex.style.height === "164px") { 
+        flex.style.height = "50px";
+    }
+    else { 
+        flex.style.height = "164px";
+    }
+    
+}
