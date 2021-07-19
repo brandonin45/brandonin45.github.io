@@ -189,7 +189,10 @@ div.home {
 	text-align: center;
 	color: white;
 	font-family: 'Raleway', sans-serif; 
+	animation: slideUp 1s;
 }
+
+
 
 .highlight {
 	color: #FF3F8E;
@@ -204,7 +207,7 @@ div.home {
 	border-color: white;
 	transition: background-color 1s, border-color 1s, size 1s;
 	position: relative;
-
+	animation: slideUp 1.5s;
 }
 
 .scroll-div:hover {
@@ -256,5 +259,25 @@ div.home {
 	}
 }
 
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20%);
+      } 
+      100% {
+        opacity: 1;
+        transform: translateY(0%);
+      }
+}
 
+.about-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center
+}
 
+.profile img {
+	width: 5rem;
+	height: 5rem;
+}
