@@ -147,7 +147,6 @@ div.home {
 	overflow: hidden;
 }
 
-
 .home h1 {
     color: black;
     text-align: center;
@@ -192,8 +191,6 @@ div.home {
 	animation: slideUp 1s;
 }
 
-
-
 .highlight {
 	color: #FF3F8E;
 }
@@ -215,15 +212,12 @@ div.home {
 	border-color: #15d7d0;
 }
 
-
-/* https://www.w3schools.com/howto/howto_js_topnav_responsive.asp */
 .flex-nav {
 	background-color: #1b242f;
 	height: 50px;
 	border-bottom: #15d7d0 3px solid;
 	transition: height 0.5s;
 }
-
 
 .link-wrap {
 	color: white;
@@ -271,12 +265,16 @@ div.home {
       }
 }
 
+#about {
+	padding-top: 1rem;
+}
+
 .about-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 5rem;
+	margin-top: 7rem;
 }
 
 .about-wrapper p {

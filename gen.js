@@ -67,10 +67,13 @@ lportfolio.onmouseout = function() { lportfolio.style.color = "white"; };
 lcontact.onmouseover = function() { lcontact.style.color = "#FF3F8E"; };
 lcontact.onmouseout = function() { lcontact.style.color = "white"; };
 
+window.onload = function() {
+    if (window.innerWidth < 480) { navbar.classList.add("sticky"); }
+};
 
 // **CHANGE PIXELS FOR BETTER RECOGNITION**
 function navEffect() {
-  if (window.pageYOffset >= sticky) { navbar.classList.add("sticky"); } 
+  if (window.pageYOffset >= sticky || window.innerWidth < 480) { navbar.classList.add("sticky"); } 
   else { navbar.classList.remove("sticky"); }
 
   if (window.pageYOffset >= homePos && window.pageYOffset < aboutPos-100) {
