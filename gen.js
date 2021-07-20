@@ -51,7 +51,7 @@ var homePos = home.offsetTop,
 //navbar scroll to section
 lhome.onclick = function() { home.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
 labout.onclick = function() { about.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
-lquali.onclick = function() { quali.scrollIntoView(); if (window.innerWidth< 480) { smallNav(); }};
+lquali.onclick = function() { quali.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
 lportfolio.onclick = function() { portfolio.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
 lcontact.onclick = function() { contact.scrollIntoView(); if (window.innerWidth< 480) { smallNav(); }};
 
@@ -67,9 +67,7 @@ lportfolio.onmouseout = function() { lportfolio.style.color = "white"; };
 lcontact.onmouseover = function() { lcontact.style.color = "#FF3F8E"; };
 lcontact.onmouseout = function() { lcontact.style.color = "white"; };
 
-window.onload = function() {
-    if (window.innerWidth < 480) { navbar.classList.add("sticky"); }
-};
+window.onload = function() { if (window.innerWidth < 480) { navbar.classList.add("sticky"); } };
 
 // **CHANGE PIXELS FOR BETTER RECOGNITION**
 function navEffect() {
@@ -144,10 +142,10 @@ function smallNav() {
     
 }
 
-var atitle = document.querySelector(".about-title");
-var titleline = document.querySelector("#title-line");
-var profile = document.querySelector(".profile");
-var aboutText = document.querySelector(".about-wrapper p");
+var atitle = document.querySelector(".about-title"),
+    titleline = document.querySelector("#title-line"),
+    profile = document.querySelector(".profile"),
+    aboutText = document.querySelector(".about-wrapper p");
 
 
 
@@ -167,6 +165,7 @@ function debounce(func, wait, immediate) {
 	};
 };
 
+//load about section on scroll
 var aboutLoad = debounce(function() {
     if (window.pageYOffset > atitle.offsetTop/5) { 
         atitle.style.transform = "translateX(0px)";
@@ -183,6 +182,33 @@ var aboutLoad = debounce(function() {
         aboutText.style.transform = "translateX(0px)";
         aboutText.style.opacity = "1";
     }
-}, 10, 1);
+}, 100, 1);
 
 window.addEventListener('scroll', aboutLoad);
+
+
+
+function counter(element, count, final) {
+    count += 1;
+    element.innerHTML = count + "%";
+    if (count < final) {
+        setTimeout(function() { counter(element,count,final); }, 10);
+    }
+}
+
+var bar1 = document.querySelector(".barfill.s1"),
+    span1 = document.querySelector(".bar.s1 span"),
+    bar2 = document.querySelector(".barfill.s2"),
+    span2 = document.querySelector(".bar.s2 span");
+
+var skillLoad = debounce(function() {
+    if (window.pageYOffset > aboutText.offsetTop) {
+        if (bar1.style.width != "80%") { counter(span1,0,80); } 
+        bar1.style.width = "80%";
+       
+        if (bar2.style.width != "90%") { counter(span2,0,90); } 
+        bar2.style.width = "90%";
+    }
+}, 100, 1);
+
+window.addEventListener('scroll', skillLoad);

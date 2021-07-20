@@ -54,6 +54,30 @@ body {
 		left: 0;
 		top: 0;
 	}
+	#about {
+		padding-top: 1rem;
+	}	
+	.about-wrapper {
+		margin-top: 4rem;
+	}
+	.about-wrapper p {
+		margin: 0 10%;
+		font-size: 0.8rem;
+	}
+	.about-title {
+		font-size: 2rem;
+	}
+	#title-line {
+		margin: 10px 0;
+		width: 8rem;
+		height: 0.12rem;
+	}
+	.profile img {
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+		width: 12rem;
+		height: 12rem;
+	}
 } 
 @media (min-width:479px) { 
 	.text { font-size: 1.8rem; } 
@@ -94,6 +118,30 @@ body {
 		/* big nav */
 		display: none;
 	}
+	#about {
+		padding-top: 1rem;
+	}	
+	.about-wrapper {
+		margin-top: 5.5rem;
+	}
+	.about-wrapper p {
+		margin: 0 10%;
+		font-size: 1rem;
+	}
+	.about-title {
+		font-size: 2.5rem;
+	}
+	#title-line {
+		margin: 10px 0;
+		width: 8.5rem;
+		height: 0.15rem;
+	}
+	.profile img {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		width: 16rem;
+		height: 16rem;
+	}
 } 
 @media (min-width:1008px) { 
 	.text { font-size: 2.8rem; }
@@ -133,6 +181,30 @@ body {
 	.icon {
 		/* big nav */
 		display: none;
+	}
+	#about {
+		padding-top: 1rem;
+	}	
+	.about-wrapper {
+		margin-top: 7rem;
+	}
+	.about-wrapper p {
+		margin: 0 20%;
+		font-size: 1.4rem;
+	}
+	.about-title {
+		font-size: 3rem;
+	}
+	#title-line {
+		margin: 10px 0;
+		width: 10rem;
+		height: 0.2rem;
+	}
+	.profile img {
+		margin-top: 2rem;
+		margin-bottom: 2rem;
+		width: 20rem;
+		height: 20rem;
 	}
  } 
 
@@ -265,28 +337,21 @@ div.home {
       }
 }
 
-#about {
-	padding-top: 1rem;
-}
-
 .about-wrapper {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin-top: 7rem;
 }
 
 .about-wrapper p {
 	font-family: 'Raleway', sans-serif;
 	font-weight: bold;
-	font-size: 1.4rem;
 	text-align: center;
 	color: #444649;
-	margin: 0 15%;
 	transform: translateY(600px);
 	opacity: 0;
-	transition: transform 1.2s ease-out, opacity 2s ease-out;
+	transition: transform 1.5s ease-out, opacity 2s ease-out;
 }
 
 .about-wrapper span {
@@ -294,7 +359,6 @@ div.home {
 }
 
 .about-title {
-	font-size: 3rem;
 	font-family: 'Raleway', sans-serif; 
 	font-weight: bold;
 	color: #444649;
@@ -304,10 +368,7 @@ div.home {
 }
 
 #title-line {
-	width: 10rem;
-	height: 0.2rem;
 	background-color: #444649;
-	margin: 10px 0;
 	transform: translateX(-600px);
 	opacity: 0;
 	transition: transform 1s ease-out, opacity 1s;
@@ -316,11 +377,109 @@ div.home {
 .profile {
 	transform: translateY(600px);
 	opacity: 0;
-	transition: transform 1s ease-out, opacity 2s ease-out;
+	transition: transform 1.2s ease-out, opacity 2s ease-out;
 }
-.profile img {
-	margin-top: 2rem;
-	margin-bottom: 2rem;
-	width: 20rem;
-	height: 20rem;
+
+#quali {
+	padding-top: 5rem;
+}
+
+.quali-wrapper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #f5f5f5;
+	padding-top: 5rem;
+	padding-bottom: 5rem;
+}
+
+.quali-title {
+	font-family: 'Raleway', sans-serif; 
+	font-weight: bold;
+	color: #444649;
+	/* transform: translateX(-400px);
+	opacity: 1;
+	transition: transform 1s ease-out, opacity 1s; */
+	font-size: 3rem;
+}
+
+#quali-line {
+	background-color: #444649;
+	/* transform: translateX(-600px);
+	opacity: 1;
+	transition: transform 1s ease-out, opacity 1s; */
+	margin: 10px 0;
+	width: 18rem;
+	height: 0.2rem;
+}
+
+.skill-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	background-color: #f5f5f5;
+	padding-top: 5rem;
+}
+
+.edu-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Raleway', sans-serif; 
+	margin: 0 2rem;
+	
+}
+
+.edu-wrapper img{
+	width: 14rem;
+	height: 12rem;
+	margin-right: 1rem;
+}
+
+#edu1 {
+	font-size: 2rem;
+}
+
+#edu2 {
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+
+#edu3 {
+	font-size: 1rem;
+}
+
+.skillbar {
+	font-family: 'Raleway', sans-serif; 
+}
+
+.bar {
+	position: relative;
+	width: 15rem;
+	height: 1.2rem;
+	background-color: #23a6d5;
+}
+
+.barfill {
+	position: relative;
+	left: 0;
+	width: 0;
+	height: 100%;
+	background: pink;
+	transition: width 1s ease-out;
+}
+
+.tag {
+	position: absolute;
+	left: 0;
+	background-color: #444649;
+}
+
+.bar span {
+	position: absolute;
+	top: 0;
+	right: 0;
 }
