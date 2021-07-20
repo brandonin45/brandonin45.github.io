@@ -16,7 +16,7 @@ function func2() {
 }
 
 function func3() {
-    document.getElementById("about").scrollIntoView();
+    document.querySelector("#about").scrollIntoView();
 }
 
 //sticky navbar and navbar animations
@@ -69,7 +69,7 @@ lcontact.onmouseout = function() { lcontact.style.color = "white"; };
 
 window.onload = function() { if (window.innerWidth < 480) { navbar.classList.add("sticky"); } };
 
-// **CHANGE PIXELS FOR BETTER RECOGNITION**
+// ***CHANGE PIXELS FOR BETTER RECOGNITION***
 function navEffect() {
   if (window.pageYOffset >= sticky || window.innerWidth < 480) { navbar.classList.add("sticky"); } 
   else { navbar.classList.remove("sticky"); }
@@ -82,7 +82,7 @@ function navEffect() {
         lhome.style.transition = "0.3s";
         lhome.style.color = "#FF3F8E";
     }
-    else if (window.pageYOffset >= aboutPos-100 && window.pageYOffset < qualiPos) {
+    else if (window.pageYOffset >= aboutPos-100 && window.pageYOffset < qualiPos-100) {
         console.log("about");
         lhome.style.color = "white";
         lhome.onmouseout = function() { lhome.style.color = "white"; };
@@ -93,7 +93,7 @@ function navEffect() {
         labout.style.color = "#FF3F8E";
         
     }   
-    else if (window.pageYOffset >= qualiPos && window.pageYOffset < portfolioPos) {
+    else if (window.pageYOffset >= qualiPos-100 && window.pageYOffset < portfolioPos) {
         console.log("quali");
         lportfolio.style.color = "white";
         labout.style.color = "white";
@@ -167,6 +167,7 @@ function debounce(func, wait, immediate) {
 
 //load about section on scroll
 var aboutLoad = debounce(function() {
+    console.log("hi")
     if (window.pageYOffset > atitle.offsetTop/5) { 
         atitle.style.transform = "translateX(0px)";
         atitle.style.opacity = "1";
@@ -182,12 +183,12 @@ var aboutLoad = debounce(function() {
         aboutText.style.transform = "translateX(0px)";
         aboutText.style.opacity = "1";
     }
-}, 100, 1);
+}, 10, 1);
 
 window.addEventListener('scroll', aboutLoad);
 
 
-
+//skill bar percentage counter 
 function counter(element, count, final) {
     count += 1;
     element.innerHTML = count + "%";
@@ -199,16 +200,60 @@ function counter(element, count, final) {
 var bar1 = document.querySelector(".barfill.s1"),
     span1 = document.querySelector(".bar.s1 span"),
     bar2 = document.querySelector(".barfill.s2"),
-    span2 = document.querySelector(".bar.s2 span");
+    span2 = document.querySelector(".bar.s2 span"),
+    bar3 = document.querySelector(".barfill.s3"),
+    span3 = document.querySelector(".bar.s3 span"),
+    bar4 = document.querySelector(".barfill.s4"),
+    span4 = document.querySelector(".bar.s4 span"),
+    bar5 = document.querySelector(".barfill.s5"),
+    span5 = document.querySelector(".bar.s5 span"),
+    bar6 = document.querySelector(".barfill.s6"),
+    span6 = document.querySelector(".bar.s6 span"),
+    bar7 = document.querySelector(".barfill.s7"),
+    span7 = document.querySelector(".bar.s7 span");
+    qtitle = document.querySelector(".quali-title"),
+    qtitleline = document.querySelector("#quali-line"),
+    qimg = document.querySelector(".edu-wrapper img"),
+    qtable = document.querySelector("#edu-content"),
+    qskilltable = document.querySelector(".skillbar"),
+    edupic = document.querySelector(".edu-wrapper img"),
+    edutext = document.querySelector("#edu-content");
 
 var skillLoad = debounce(function() {
-    if (window.pageYOffset > aboutText.offsetTop) {
-        if (bar1.style.width != "80%") { counter(span1,0,80); } 
-        bar1.style.width = "80%";
-       
-        if (bar2.style.width != "90%") { counter(span2,0,90); } 
-        bar2.style.width = "90%";
+    if (window.pageYOffset > profile.offsetTop) {
+        qtitle.style.transform = "translateX(0px)";
+        qtitle.style.opacity = "1";
     }
-}, 100, 1);
+    if (window.pageYOffset > profile.offsetTop/0.85) {
+        qtitleline.style.transform = "translateX(0px)";
+        qtitleline.style.opacity = "1";
+    }
+    if (window.pageYOffset > profile.offsetTop/0.8) {
+        qskilltable.style.transform = "translateX(0px)";
+        qskilltable.style.opacity = "1";
+        edupic.style.transform = "translateX(0px)";
+        edupic.style.opacity = "1";
+        edutext.style.transform = "translateX(0px)";
+        edutext.style.opacity = "1";
+        setTimeout(function() {
+            // ***MODIFY PERCENTAGES***
+            if (bar1.style.width != "90%") { counter(span1,0,90); } 
+            bar1.style.width = "90%";
+            if (bar2.style.width != "80%") { counter(span2,0,80); } 
+            bar2.style.width = "80%";    
+            if (bar3.style.width != "80%") { counter(span3,0,80); } 
+            bar3.style.width = "80%";    
+            if (bar4.style.width != "65%") { counter(span4,0,65); } 
+            bar4.style.width = "65%";    
+            if (bar5.style.width != "70%") { counter(span5,0,70); } 
+            bar5.style.width = "70%";     
+            if (bar6.style.width != "60%") { counter(span6,0,60); } 
+            bar6.style.width = "60%";     
+            if (bar7.style.width != "70%") { counter(span7,0,70); } 
+            bar7.style.width = "70%";
+        }, 1000);
+    }
+    
+}, 10, 1);
 
 window.addEventListener('scroll', skillLoad);

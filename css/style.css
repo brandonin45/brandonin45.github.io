@@ -62,7 +62,7 @@ body {
 	}
 	.about-wrapper p {
 		margin: 0 10%;
-		font-size: 0.8rem;
+		font-size: 1rem;
 	}
 	.about-title {
 		font-size: 2rem;
@@ -77,6 +77,55 @@ body {
 		margin-bottom: 1rem;
 		width: 12rem;
 		height: 12rem;
+	}
+	#quali {
+		padding-top: 5rem;
+	}
+	.quali-wrapper {
+		flex-direction: column;
+	}
+	.quali-title {
+		font-size: 2rem;
+	}
+	#quali-line {
+		width: 13rem;
+		height: 0.12rem;
+	}
+	.skill-wrapper {
+		flex-direction: column;
+		padding-top: 3rem;
+	}
+	.edu-wrapper {
+		flex-direction: column;
+		text-align: center;
+		padding-bottom: 3rem;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.edu-wrapper img{
+		width: 12rem;
+		height: 12rem;
+		margin-right: 0;
+	}
+	#edu-content {
+		margin-bottom: 2rem;
+	}
+	#edu1 {
+		font-size: 2rem;
+	}
+	#edu2 {
+		padding-bottom: 1rem;
+		font-size: 1.3rem;
+		font-weight: bold;
+	}
+	#edu3 {
+		font-size: 1rem;
+	}
+	.skillbar {
+		margin-right: 0;
+	}
+	.bar {
+		width: 20rem;
 	}
 } 
 @media (min-width:479px) { 
@@ -142,6 +191,55 @@ body {
 		width: 16rem;
 		height: 16rem;
 	}
+	#quali {
+		padding-top: 5rem;
+	}
+	.quali-wrapper {
+		flex-direction: column;
+	}
+	.quali-title {
+		font-size: 2.5rem;
+	}
+	#quali-line {
+		width: 16rem;
+		height: 0.15rem;
+	}
+	.skill-wrapper {
+		flex-direction: column;
+		padding-top: 3rem;
+	}
+	.edu-wrapper {
+		flex-direction: column;
+		text-align: center;
+		padding-bottom: 3rem;
+		margin-right: 0;
+		margin-left: 0;
+	}
+	.edu-wrapper img{
+		width: 14rem;
+		height: 14rem;
+		margin-right: 0;
+	}
+	#edu-content {
+		margin-bottom: 2rem;
+	}
+	#edu1 {
+		font-size: 2rem;
+	}
+	#edu2 {
+		padding-bottom: 1rem;
+		font-size: 1.3rem;
+		font-weight: bold;
+	}
+	#edu3 {
+		font-size: 1rem;
+	}
+	.skillbar {
+		margin-right: 0;
+	}
+	.bar {
+		width: 26rem;
+	}
 } 
 @media (min-width:1008px) { 
 	.text { font-size: 2.8rem; }
@@ -206,6 +304,56 @@ body {
 		width: 20rem;
 		height: 20rem;
 	}
+	#quali {
+		padding-top: 5rem;
+	}
+	.quali-wrapper {
+		flex-direction: column;
+	}
+	.quali-title {
+		font-size: 3rem;
+	}
+	#quali-line {
+		width: 18rem;
+		height: 0.2rem;
+	}
+	.skill-wrapper {
+		flex-direction: row;
+		padding-top: 5rem;
+	}
+	.edu-wrapper {
+		text-align: left;
+		flex-direction: row;
+		padding-bottom: 0;
+		margin-right: 4em;
+		margin-left: 1rem;
+	}
+	.edu-wrapper img{
+		width: 14rem;
+		height: 14rem;
+		margin-right: 1rem;
+	}
+	#edu-content {
+		margin-bottom: 2rem;
+	}
+	#edu1 {
+		font-size: 2rem;
+	}
+	#edu2 {
+		padding-bottom: 1rem;
+		font-size: 1.3rem;
+		font-weight: bold;
+	}
+	#edu3 {
+		font-size: 1rem;
+	}
+	.skillbar {
+		margin-right: 1rem;
+	}
+	.bar {
+		width: 26rem;
+	}
+
  } 
 
 div.home {
@@ -314,7 +462,7 @@ div.home {
 	animation-name: slideIn;
 	animation-duration: 0.5s;
 	animation-timing-function: ease-out;
-	z-index: 2;
+	z-index: 99;
 }
 
 @keyframes slideIn {
@@ -380,13 +528,13 @@ div.home {
 	transition: transform 1.2s ease-out, opacity 2s ease-out;
 }
 
-#quali {
+ #quali {
 	padding-top: 5rem;
 }
 
 .quali-wrapper {
+	overflow: hidden;
 	display: flex;
-	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	background-color: #f5f5f5;
@@ -398,45 +546,43 @@ div.home {
 	font-family: 'Raleway', sans-serif; 
 	font-weight: bold;
 	color: #444649;
-	/* transform: translateX(-400px);
-	opacity: 1;
-	transition: transform 1s ease-out, opacity 1s; */
-	font-size: 3rem;
+	transform: translateX(400px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s;
 }
 
 #quali-line {
 	background-color: #444649;
-	/* transform: translateX(-600px);
-	opacity: 1;
-	transition: transform 1s ease-out, opacity 1s; */
+	transform: translateX(600px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s;
 	margin: 10px 0;
-	width: 18rem;
-	height: 0.2rem;
 }
 
 .skill-wrapper {
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	background-color: #f5f5f5;
-	padding-top: 5rem;
 }
 
 .edu-wrapper {
 	display: flex;
-	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	font-family: 'Raleway', sans-serif; 
-	margin: 0 2rem;
-	
 }
 
 .edu-wrapper img{
-	width: 14rem;
-	height: 12rem;
-	margin-right: 1rem;
+	transform: translateX(-600px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s;
+}
+
+#edu-content {
+	transform: translateX(-400px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s;
 }
 
 #edu1 {
@@ -444,6 +590,7 @@ div.home {
 }
 
 #edu2 {
+	padding-bottom: 1rem;
 	font-size: 1.3rem;
 	font-weight: bold;
 }
@@ -454,13 +601,16 @@ div.home {
 
 .skillbar {
 	font-family: 'Raleway', sans-serif; 
+	transform: translateX(600px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s;
 }
 
 .bar {
 	position: relative;
-	width: 15rem;
-	height: 1.2rem;
-	background-color: #23a6d5;
+	height: 1.5rem;
+	background-color: #e8e8e8;
+	margin-bottom: 1.2rem;
 }
 
 .barfill {
@@ -468,18 +618,30 @@ div.home {
 	left: 0;
 	width: 0;
 	height: 100%;
-	background: pink;
+	background: #0e9691;
 	transition: width 1s ease-out;
 }
 
 .tag {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: absolute;
 	left: 0;
-	background-color: #444649;
+	background-color: #12c1bb;
+	font-weight: bold;
+	color: white;
+	height: 100%;
+	font-size: 1rem;
+	width: 30%;
+	z-index: 2;
 }
 
 .bar span {
 	position: absolute;
 	top: 0;
 	right: 0;
+	padding-right: 2px;
+	padding-top: 2px;
+	 
 }
