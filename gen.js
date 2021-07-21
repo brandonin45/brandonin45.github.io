@@ -317,7 +317,7 @@ pimgB.onmouseover = function() {
 };
 
 pimgB.onmouseout = function() {
-    pimgB.src = "img/smart.png";
+    pimgB.src = "img/smart.PNG";
     pimgB.style.width = "80%";
     subB.style.transform = "translateY(-40px)";
     slineB.style.transitionDelay = "0s"; 
