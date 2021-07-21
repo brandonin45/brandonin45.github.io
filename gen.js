@@ -167,7 +167,6 @@ function debounce(func, wait, immediate) {
 
 //load about section on scroll
 var aboutLoad = debounce(function() {
-    console.log("hi")
     if (window.pageYOffset > atitle.offsetTop/5) { 
         atitle.style.transform = "translateX(0px)";
         atitle.style.opacity = "1";
@@ -260,7 +259,9 @@ window.addEventListener('scroll', skillLoad);
 
 
 var ptitle = document.querySelector(".proj-title"),
-    ptitleline = document.querySelector("#proj-line");
+    ptitleline = document.querySelector("#proj-line"),
+    row1 = document.querySelector(".r-1"),
+    row2 = document.querySelector(".r-2");
 
 var projLoad = debounce(function() {
     if (window.pageYOffset > qskilltable.offsetTop) {
@@ -269,6 +270,14 @@ var projLoad = debounce(function() {
         ptitleline.style.transform = "translateX(0px)";
         ptitleline.style.opacity = "1";
     }
+    if (window.pageYOffset > qskilltable.offsetTop/0.9) {
+        row1.style.transform = "translateY(0px)";
+        row1.style.opacity = "1";
+    } 
+    if (window.pageYOffset > qskilltable.offsetTop/0.8) {
+        row2.style.transform = "translateY(0px)";
+        row2.style.opacity = "1";
+    } 
     
 }, 10, 1);
 
@@ -318,7 +327,7 @@ pimgB.onmouseover = function() {
 
 pimgB.onmouseout = function() {
     pimgB.src = "img/smart.PNG";
-    pimgB.style.width = "80%";
+    pimgB.style.width = "75%";
     subB.style.transform = "translateY(-40px)";
     slineB.style.transitionDelay = "0s"; 
     slineB.style.width = "0"; 
