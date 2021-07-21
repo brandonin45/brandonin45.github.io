@@ -2,7 +2,7 @@ html {
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
-	height: 500%;
+	height: auto;
 	font-size: 100%;
 }
 
@@ -37,7 +37,7 @@ body {
 		/* mobile nav */
 		position: relative;
 		padding-top: 3rem;
-		font-size: 0.8rem;
+		font-size: 0.9rem;
 	}
 	.link-wrap div{
 		/* mobile nav */
@@ -367,37 +367,6 @@ body {
 	}
  } 
 
-div.home {
-    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-    background-size: 400% 400%;
-	margin: 5% 20%;
-    animation-name: gradient;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease;
-	overflow: hidden;
-}
-
-.home h1 {
-    color: black;
-    text-align: center;
-	font-family: 'Open Sans', sans-serif;
-	font-weight: normal;
-	font-size: 5rem;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-} 
-
 #canvas {
 	border-bottom: 1px solid black;
 	width: 100%;
@@ -463,7 +432,7 @@ div.home {
 	width: 1.3rem;
 	height: 1.3rem;
 	padding-left: 15px;
-	padding-top: 12px;
+	padding-top: 13px;
 }
 
 .sticky {
@@ -861,6 +830,7 @@ div.home {
 	position: absolute;
 	left: 1rem;
 }
+
 #arrowAnimR {
 	height: 100%;
 	position: absolute;
@@ -873,24 +843,63 @@ div.home {
 	border: 0.1rem solid;
 	border-color: white transparent transparent white;
 	transform: rotate(-135deg);
-  }
+}
   
-  .arrowSliding {
+.arrowSliding {
 	opacity: 0;
 	position: absolute;
 	animation: slide 4.5s linear infinite;
-  }
+}
 
-  .delay1 {
-	  animation-delay:1.5s;
-  }
-  .delay2 {
-	  animation-delay: 3s;
-  }
+.delay1 {
+	animation-delay:1.5s;
+}
+
+.delay2 {
+	animation-delay: 3s;
+}
 
 @keyframes slide {
     0% { opacity:0; transform: translateY(-0.7em); }	
    20% { opacity:1; transform: translateY(-0.2em); }	
    80% { opacity:1; transform: translateY(1.5em); }	
   100% { opacity:0; transform: translateY(2em); }	
+}
+
+#contact {
+	padding-top: 1rem;
+}
+
+.contact-wrapper {
+	display: flex;
+	justify-content: start;
+	align-items: center;
+	background-color: #1b242f;
+
+	width: 100vw;
+	height: 100vh;
+	max-width: 100%;
+	flex-direction: column;
+}
+
+.con-title {
+	font-family: 'Raleway', sans-serif; 
+	font-weight: bold;
+	color: white;
+	padding-top: 6rem;
+	/* transform: translateX(-400px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s; */
+	font-size: 3rem;
+}
+
+#con-line {
+	background-color: white;
+	/* transform: translateX(-600px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s; */
+	margin-top: 10px;
+	margin-bottom: 5rem;
+	width: 12rem;
+	height: 0.2rem;
 }

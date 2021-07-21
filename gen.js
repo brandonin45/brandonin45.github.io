@@ -104,7 +104,7 @@ function navEffect() {
         lquali.style.transition = "0.3s";
         lquali.style.color = "#FF3F8E";
     }
-    else if (window.pageYOffset >= portfolioPos-100 && window.pageYOffset < contactPos) {
+    else if (window.pageYOffset >= portfolioPos-100 && window.pageYOffset < contactPos-100) {
         console.log("portfolio");
         lcontact.style.color = "white";
         lquali.style.color = "white";
@@ -115,7 +115,7 @@ function navEffect() {
         lportfolio.style.transition = "0.3s";
         lportfolio.style.color = "#FF3F8E";
     }
-    else if (window.pageYOffset >= contactPos) {
+    else if (window.pageYOffset >= contactPos-100) {
         console.log("contact");
         lportfolio.style.color = "white";
         lportfolio.onmouseout = function() { lportfolio.style.color = "white"; };
@@ -133,11 +133,11 @@ var flex = document.querySelector(".flex-nav");
 var link = document.querySelector(".link-wrap div");
 function smallNav() {
     console.log("hi");
-    if (flex.style.height === "170px") { 
+    if (flex.style.height === "175px") { 
         flex.style.height = "50px";
     }
     else { 
-        flex.style.height = "170px";
+        flex.style.height = "175px";
     }
     
 }
@@ -388,5 +388,8 @@ pimgF.onmouseout = function() {
 };
 
 
+var cwrapper = document.querySelector(".contact-wrapper"),
+    ctitle = document.querySelector(".con-title"),
+    ctitleline = document.querySelector(".con-line");
 
 
