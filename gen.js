@@ -257,3 +257,125 @@ var skillLoad = debounce(function() {
 }, 10, 1);
 
 window.addEventListener('scroll', skillLoad);
+
+
+var ptitle = document.querySelector(".proj-title"),
+    ptitleline = document.querySelector("#proj-line");
+
+var projLoad = debounce(function() {
+    if (window.pageYOffset > qskilltable.offsetTop) {
+        ptitle.style.transform = "translateX(0px)";
+        ptitle.style.opacity = "1";
+        ptitleline.style.transform = "translateX(0px)";
+        ptitleline.style.opacity = "1";
+    }
+    
+}, 10, 1);
+
+window.addEventListener('scroll', projLoad);
+
+
+var pimgA = document.querySelector(".a img"),
+    subA = document.querySelector(".a .sub"),
+    slineA = document.querySelector(".a .sline"),
+    pimgB = document.querySelector(".b img"),
+    subB = document.querySelector(".b .sub"),
+    slineB = document.querySelector(".b .sline");
+    pimgC = document.querySelector(".c img"),
+    subC = document.querySelector(".c .sub"),
+    slineC = document.querySelector(".c .sline");
+    pimgD = document.querySelector(".d img"),
+    subD = document.querySelector(".d .sub"),
+    slineD = document.querySelector(".d .sline");
+    pimgE = document.querySelector(".e img"),
+    subE = document.querySelector(".e .sub"),
+    slineE = document.querySelector(".e .sline");
+    pimgF = document.querySelector(".f img"),
+    subF = document.querySelector(".f .sub"),
+    slineF = document.querySelector(".f .sline");
+
+pimgA.onmouseover = function() {
+    pimgA.src = "img/futureg.gif";
+    subA.style.transform = "translateY(0)";
+    slineA.style.transitionDelay = "0.2s"; 
+    slineA.style.width = "11rem";
+};
+
+pimgA.onmouseout = function() {
+    pimgA.src = "img/future2.png";
+    subA.style.transform = "translateY(-40px)";
+    slineA.style.transitionDelay = "0s"; 
+    slineA.style.width = "0"; 
+};
+
+pimgB.onmouseover = function() {
+    pimgB.src = "img/smartg.gif";
+    pimgB.style.width = "100%";
+    subB.style.transform = "translateY(0)";
+    slineB.style.transitionDelay = "0.2s"; 
+    slineB.style.width = "7rem";
+};
+
+pimgB.onmouseout = function() {
+    pimgB.src = "img/smart.png";
+    pimgB.style.width = "80%";
+    subB.style.transform = "translateY(-40px)";
+    slineB.style.transitionDelay = "0s"; 
+    slineB.style.width = "0"; 
+};
+
+pimgC.onmouseover = function() {
+    pimgC.src = "img/pelletgg.gif";
+    subC.style.transform = "translateY(0)";
+    slineC.style.transitionDelay = "0.2s"; 
+    slineC.style.width = "7rem";
+};
+
+pimgC.onmouseout = function() {
+    pimgC.src = "img/pellet.png";
+    subC.style.transform = "translateY(-40px)";
+    slineC.style.transitionDelay = "0s"; 
+    slineC.style.width = "0"; 
+};
+
+pimgD.onmouseover = function() {
+    subD.style.transform = "translateY(0)";
+    slineD.style.transitionDelay = "0.2s"; 
+    slineD.style.width = "6rem";
+};
+
+pimgD.onmouseout = function() {
+    subD.style.transform = "translateY(-40px)";
+    slineD.style.transitionDelay = "0s"; 
+    slineD.style.width = "0"; 
+};
+
+pimgE.onmouseover = function() {
+    pimgE.src = "img/audiog.gif";
+    subE.style.transform = "translateY(0)";
+    slineE.style.transitionDelay = "0.2s"; 
+    slineE.style.width = "9rem";
+};
+
+pimgE.onmouseout = function() {
+    pimgE.src = "img/audio1.PNG";
+    subE.style.transform = "translateY(-40px)";
+    slineE.style.transitionDelay = "0s"; 
+    slineE.style.width = "0"; 
+};
+
+pimgF.onmouseover = function() {
+    subF.style.transform = "translateY(0)";
+    slineF.style.transitionDelay = "0.2s"; 
+    slineF.style.width = "8rem";
+};
+
+pimgF.onmouseout = function() {
+    subF.style.transform = "translateY(-40px)";
+    slineF.style.transitionDelay = "0s"; 
+    slineF.style.width = "0"; 
+};
+
+
+
+

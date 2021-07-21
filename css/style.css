@@ -668,19 +668,19 @@ div.home {
 	transform: translateX(600px);
 	opacity: 0;
 	transition: transform 1s ease-out, opacity 1s;
-	margin: 10px 0;
+	margin-top: 10px;
+	margin-bottom: 5rem;
 
 	width: 11rem;
 	height: 0.2rem;
 }
 
 .proj-table-wrapper {
-	margin-top: 3rem;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-evenly;
+	align-items: flex-start;
 }
 
 .cell {
@@ -689,21 +689,11 @@ div.home {
 	
 	transform: scale(1);
 	transition: transform 0.5s;
-	margin: 1rem 1rem;
-}
-
-.a {
-	width: 22rem;
-	height: 18rem;
+	margin: 1rem 0.5rem;
 }
 
 .cell:hover {
 	transform: scale(1.05);
-}
-
-.a img {
-	width: 100%;
-	height: 90%;
 }
 
 .cell a {
@@ -715,18 +705,6 @@ div.home {
 	justify-content: center;
 }
 
-.a .sub {
-	font-family: 'Raleway', sans-serif; 
-	position: absolute;
-	bottom: 5px;
-	width: 100%;
-	z-index: -1;
-	text-align: center;
-	transform: translateY(-40px);
-	transition: transform 1s;
-	font-size: 1.2rem;
-}
-
 .full-width {
 	position: absolute;
 	bottom: 0;
@@ -736,38 +714,97 @@ div.home {
 	justify-content: center;
 }
 
-.a .sline {
-	width: 0;
-	height: 1px;
-	background-color: #444649;
-	transition: width 0.5s;
-}
-
-
-.b {
-	width: 16rem;
-	height: 18rem;
-}
-.b img {
-	width: 80%;
-	height: 90%;
-}
-
-.b .sub {
+.sub {
 	font-family: 'Raleway', sans-serif; 
 	position: absolute;
 	bottom: 5px;
 	width: 100%;
 	z-index: -1;
 	text-align: center;
-	transform: translateY(-40px);
-	transition: transform 1s;
-	font-size: 1.2rem;
+	transition: transform 0.5s;
 }
 
-.b .sline {
+.sline {
 	width: 0;
 	height: 1px;
 	background-color: #444649;
 	transition: width 0.5s;
+}
+
+.a {
+	width: 22rem;
+	height: 19rem;
+}
+.a img {
+	width: 100%;
+	height: 85%;
+}
+.a .sub {
+	font-size: 1.5rem;
+	transform: translateY(-40px);
+}
+
+.b {
+	width: 18rem;
+	height: 19rem;
+}
+.b img {
+	width: 75%;
+	height: 85%;
+}
+.b .sub {
+	font-size: 1.5rem;
+	transform: translateY(-40px);
+}
+
+.c {
+	width: 13rem;
+	height: 19rem;
+}
+.c img {
+	width: 100%;
+	height: 85%;
+}
+.c .sub {
+	font-size: 1.5rem;
+	transform: translateY(-40px);
+}
+
+.d {
+	width: 19rem;
+	height: 19rem;
+}
+.d img {
+	width: 100%;
+	height: 85%;
+}
+.d .sub {
+	font-size: 1.5rem;
+	transform: translateY(-40px);
+}
+
+.e {
+	width: 19rem;
+	height: 19rem;
+}
+.e img {
+	width: 100%;
+	height: 85%;
+}
+.e .sub {
+	font-size: 1.5rem;
+	transform: translateY(-40px);
+}
+
+.f {
+	width: 19rem;
+	height: 19rem;
+}
+.f img {
+	width: 100%;
+	height: 85%;
+}
+.f .sub {
+	font-size: 1.5rem;
+	transform: translateY(-40px);
 }
