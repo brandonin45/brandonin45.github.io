@@ -844,6 +844,8 @@ div.home {
 	font-family: 'Raleway', sans-serif;
 	overflow: hidden;
 	color: white;
+	opacity: 0;
+	transition: opacity 1.2s;
 	margin-bottom: 2rem;
 	width: 15rem;
 	height: 3rem;
