@@ -93,7 +93,7 @@ function navEffect() {
         labout.style.color = "#FF3F8E";
         
     }   
-    else if (window.pageYOffset >= qualiPos-100 && window.pageYOffset < portfolioPos) {
+    else if (window.pageYOffset >= qualiPos-100 && window.pageYOffset < portfolioPos-100) {
         console.log("quali");
         lportfolio.style.color = "white";
         labout.style.color = "white";
@@ -104,7 +104,7 @@ function navEffect() {
         lquali.style.transition = "0.3s";
         lquali.style.color = "#FF3F8E";
     }
-    else if (window.pageYOffset >= portfolioPos && window.pageYOffset < contactPos) {
+    else if (window.pageYOffset >= portfolioPos-100 && window.pageYOffset < contactPos) {
         console.log("portfolio");
         lcontact.style.color = "white";
         lquali.style.color = "white";
@@ -261,7 +261,8 @@ window.addEventListener('scroll', skillLoad);
 var ptitle = document.querySelector(".proj-title"),
     ptitleline = document.querySelector("#proj-line"),
     row1 = document.querySelector(".r-1"),
-    row2 = document.querySelector(".r-2");
+    row2 = document.querySelector(".r-2"),
+    learnwrap = document.querySelector(".learn-wrap");
 
 var projLoad = debounce(function() {
     if (window.pageYOffset > qskilltable.offsetTop) {
@@ -271,6 +272,7 @@ var projLoad = debounce(function() {
         ptitleline.style.opacity = "1";
     }
     if (window.pageYOffset > qskilltable.offsetTop/0.9) {
+        learnwrap.style.opacity = "1";
         row1.style.transform = "translateY(0px)";
         row1.style.opacity = "1";
     } 
