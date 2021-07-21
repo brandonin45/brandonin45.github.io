@@ -311,7 +311,7 @@ pimgA.onmouseover = function() {
 };
 
 pimgA.onmouseout = function() {
-    pimgA.src = "img/future2.png";
+    pimgA.src = "img/future2.PNG";
     subA.style.transform = "translateY(-40px)";
     slineA.style.transitionDelay = "0s"; 
     slineA.style.width = "0"; 
