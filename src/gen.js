@@ -16,9 +16,10 @@ function func2() {
 }
 
 function func3() {
-    // document.querySelector("#about").scrollIntoView();
-    scrollToSmoothly(document.querySelector("#about").offsetTop, 200);
-    
+    if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        scrollToSmoothly(document.querySelector("#about").offsetTop, 250);
+    }
+    else { document.querySelector("#about").scrollIntoView(); }
 }
 
 //smooth scrolling for all browsers
@@ -73,11 +74,26 @@ var homePos = home.offsetTop,
     contactPos = contact.offsetTop;
 
 //navbar scroll to section
-lhome.onclick = function() { home.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
-labout.onclick = function() { about.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
-lquali.onclick = function() { quali.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
-lportfolio.onclick = function() { portfolio.scrollIntoView(); if (window.innerWidth < 480) { smallNav(); }};
-lcontact.onclick = function() { contact.scrollIntoView(); if (window.innerWidth< 480) { smallNav(); }};
+lhome.onclick = function() { 
+    scrollToSmoothly(home.offsetTop, 250);
+    if (window.innerWidth < 480) { smallNav(); }
+};
+labout.onclick = function() { 
+    scrollToSmoothly(about.offsetTop, 250);
+     if (window.innerWidth < 480) { smallNav(); }
+    };
+lquali.onclick = function() { 
+    scrollToSmoothly(quali.offsetTop, 250); 
+    if (window.innerWidth < 480) { smallNav(); }
+};
+lportfolio.onclick = function() { 
+    scrollToSmoothly(portfolio.offsetTop, 250);
+     if (window.innerWidth < 480) { smallNav(); }
+    };
+lcontact.onclick = function() { 
+    scrollToSmoothly(contact.offsetTop, 250); 
+    if (window.innerWidth< 480) { smallNav(); }
+};
 
 //hover and highlight animations
 lhome.onmouseover = function() { lhome.style.color = "#FF3F8E"; };
