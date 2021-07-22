@@ -1,3 +1,4 @@
+//get window width and height
 var canvas = document.getElementById( 'canvas' ),
     c = canvas.getContext( '2d' ),
     w = canvas.width = window.innerWidth,
@@ -32,6 +33,7 @@ function randomColor(colors) {
   return colors[Math.floor(Math.random() * colors.length)];
 }
 
+//particle object
 function Particle(x, y, radius, color) {
   this.x = x;
   this.y = y;
@@ -39,13 +41,14 @@ function Particle(x, y, radius, color) {
   this.color = color;
   this.radians = Math.random() * Math.PI * 2;  
   this.velocity = 0.0005;
-  //this.distanceFromCenter = randomIntfromRange(100,900);
-  this.distanceFromCenter = {
+  //this.distanceFromCenter = randomIntfromRange(100,900); //for 2d rotating effect
+  this.distanceFromCenter = { //for 3d rotating effect
     x: randomIntfromRange(100, 900),
     y: randomIntfromRange(100, 900)
   };
   
   
+  //update function for moving particles
   this.update = () => {
     this.radians += this.velocity;
     this.x = x + Math.cos(this.radians) * this.distanceFromCenter.x;
@@ -53,6 +56,7 @@ function Particle(x, y, radius, color) {
     this.draw();
   };
 
+  //drawing each particle
   this.draw = () => {
     c.shadowColor = 'white';
     c.shadowBlur = 2;
@@ -72,6 +76,7 @@ function Particle(x, y, radius, color) {
   };
 }
 
+//initializer function: spawn particles (this instance, 120 of them)
 let particles;
 function init() {
   particles = [];
@@ -82,6 +87,7 @@ function init() {
   }
 }
 
+//each frame clears, fills, and updates particle position
 function animate() {
   requestAnimationFrame(animate);
   c.clearRect(0,0,canvas.width,canvas.height);

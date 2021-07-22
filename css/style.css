@@ -814,7 +814,7 @@ body {
 	overflow: hidden;
 	color: white;
 	opacity: 0;
-	transition: opacity 1.2s;
+	transition: opacity 2s;
 	margin-bottom: 2rem;
 	width: 15rem;
 	height: 3rem;
@@ -887,19 +887,128 @@ body {
 	font-weight: bold;
 	color: white;
 	padding-top: 6rem;
-	/* transform: translateX(-400px);
+	transform: translateX(400px);
 	opacity: 0;
-	transition: transform 1s ease-out, opacity 1s; */
+	transition: transform 1s ease-out, opacity 1s;
 	font-size: 3rem;
 }
 
 #con-line {
 	background-color: white;
-	/* transform: translateX(-600px);
+	transform: translateX(600px);
 	opacity: 0;
-	transition: transform 1s ease-out, opacity 1s; */
+	transition: transform 1s ease-out, opacity 1s;
 	margin-top: 10px;
 	margin-bottom: 5rem;
 	width: 12rem;
 	height: 0.2rem;
+}
+
+.contact-wrapper img {
+	width: 2rem;
+	height: 2rem;
+}
+
+.resume a {
+	text-decoration: none;
+}
+
+.resume {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	text-align: center;
+	color: white;
+	font-family: 'Raleway', sans-serif;
+	border: 2px solid white;
+	background-color: #1b242f;
+	transition: background-color 1s, border-color 1s, size 1s;
+	margin-top: 4rem;
+	margin-bottom: 2rem;
+	transform: translateY(150px);
+	opacity: 0;
+	transition: transform 1.3s ease-out, opacity 1s, background-color 0.6s;
+	width: 15rem;
+	height: 3rem;
+}
+
+.resume-text {
+	color: white;
+	font-size: 1.3rem;
+	font-weight: bold;
+}
+
+.resume:hover {
+	background-color: #FF3F8E;
+}
+
+.img-wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	text-align: center;
+	transform: translateY(100px);
+	opacity: 0;
+	transition: transform 1.3s ease-out, opacity 1s;
+	padding-top: 2rem;
+	margin-bottom: 5rem;
+	border-top: 2px solid #15d7d0;
+	width: 15rem;
+}
+
+.img-wrapper img {
+	transform: scale(1);
+	transition: transform 0.5s;
+}
+
+.img-wrapper img:hover {
+	transform: scale(1.3);
+}
+
+#git {
+	width: 2.2rem;
+	height: 2.2rem;
+}
+
+#mail {
+	width: 2.5rem;
+}
+
+.top {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #e5387f;
+	position: relative;
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	overflow: hidden;
+	color: white;
+	margin-bottom: 2rem;
+	margin-right: 5px;
+	width: 3rem;
+	height: 3rem;
+	transform: translateY(100px);
+	opacity: 0;
+	transition: opacity 1s, transform 1.3s ease-out;
+}
+
+
+.arrow-top {
+	width: 0.6rem;
+	height: 0.6rem;
+	border: 0.3rem solid;
+	border-color: white transparent transparent white;
+	transform: rotate(45deg);
+}
+
+.a1 {
+	position: absolute;
+	top:13px;
+}
+
+.a2 {
+	position: absolute;
+	top: 27px;
 }

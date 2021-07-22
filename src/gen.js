@@ -1,4 +1,4 @@
-//view more content animations
+//"view more content" animation
 var d1 = document.querySelector(".scroll-div"); 
 var i1 = document.querySelector("#arrow");
 
@@ -69,13 +69,12 @@ lcontact.onmouseout = function() { lcontact.style.color = "white"; };
 
 window.onload = function() { if (window.innerWidth < 480) { navbar.classList.add("sticky"); } };
 
-// ***CHANGE PIXELS FOR BETTER RECOGNITION***
+//sticky nav function and nav highlight handler
 function navEffect() {
   if (window.pageYOffset >= sticky || window.innerWidth < 480) { navbar.classList.add("sticky"); } 
   else { navbar.classList.remove("sticky"); }
 
   if (window.pageYOffset >= homePos && window.pageYOffset < aboutPos-100) {
-        console.log("home");
         labout.style.color = "white";
         lhome.onmouseout = function() { lhome.style.color = "#FF3F8E"; };
         labout.onmouseout = function() { labout.style.color = "white"; };
@@ -83,7 +82,6 @@ function navEffect() {
         lhome.style.color = "#FF3F8E";
     }
     else if (window.pageYOffset >= aboutPos-100 && window.pageYOffset < qualiPos-100) {
-        console.log("about");
         lhome.style.color = "white";
         lhome.onmouseout = function() { lhome.style.color = "white"; };
         labout.onmouseout = function() { labout.style.color = "#FF3F8E"; };
@@ -94,7 +92,6 @@ function navEffect() {
         
     }   
     else if (window.pageYOffset >= qualiPos-100 && window.pageYOffset < portfolioPos-100) {
-        console.log("quali");
         lportfolio.style.color = "white";
         labout.style.color = "white";
         labout.onmouseout = function() { labout.style.color = "white"; };
@@ -105,7 +102,6 @@ function navEffect() {
         lquali.style.color = "#FF3F8E";
     }
     else if (window.pageYOffset >= portfolioPos-100 && window.pageYOffset < contactPos-100) {
-        console.log("portfolio");
         lcontact.style.color = "white";
         lquali.style.color = "white";
         lquali.onmouseout = function() { lquali.style.color = "white"; };
@@ -116,7 +112,6 @@ function navEffect() {
         lportfolio.style.color = "#FF3F8E";
     }
     else if (window.pageYOffset >= contactPos-100) {
-        console.log("contact");
         lportfolio.style.color = "white";
         lportfolio.onmouseout = function() { lportfolio.style.color = "white"; };
         lcontact.onmouseout = function() { lcontact.style.color = "#FF3F8E"; };
@@ -165,7 +160,7 @@ function debounce(func, wait, immediate) {
 	};
 };
 
-//load about section on scroll
+//about loader onscroll
 var aboutLoad = debounce(function() {
     if (window.pageYOffset > atitle.offsetTop/5) { 
         atitle.style.transform = "translateX(0px)";
@@ -218,6 +213,7 @@ var bar1 = document.querySelector(".barfill.s1"),
     edupic = document.querySelector(".edu-wrapper img"),
     edutext = document.querySelector("#edu-content");
 
+//skill wrapper loader and animations    
 var skillLoad = debounce(function() {
     if (window.pageYOffset > profile.offsetTop) {
         qtitle.style.transform = "translateX(0px)";
@@ -234,6 +230,7 @@ var skillLoad = debounce(function() {
         edupic.style.opacity = "1";
         edutext.style.transform = "translateX(0px)";
         edutext.style.opacity = "1";
+        //delay percentage animation
         setTimeout(function() {
             // ***MODIFY PERCENTAGES***
             if (bar1.style.width != "90%") { counter(span1,0,90); } 
@@ -264,6 +261,7 @@ var ptitle = document.querySelector(".proj-title"),
     row2 = document.querySelector(".r-2"),
     learnwrap = document.querySelector(".learn-wrap");
 
+//portfolio/project loader and animations
 var projLoad = debounce(function() {
     if (window.pageYOffset > qskilltable.offsetTop) {
         ptitle.style.transform = "translateX(0px)";
@@ -272,7 +270,7 @@ var projLoad = debounce(function() {
         ptitleline.style.opacity = "1";
     }
     if (window.pageYOffset > qskilltable.offsetTop/0.9) {
-        learnwrap.style.opacity = "1";
+        setTimeout( function() { learnwrap.style.opacity = "1"; }, 1000);
         row1.style.transform = "translateY(0px)";
         row1.style.opacity = "1";
     } 
@@ -305,6 +303,7 @@ var pimgA = document.querySelector(".a img"),
     subF = document.querySelector(".f .sub"),
     slineF = document.querySelector(".f .sline");
 
+//portfolio/portfolio handler
 pimgA.onmouseover = function() {
     pimgA.src = "img/futureg.gif";
     subA.style.transform = "translateY(0)";
@@ -390,6 +389,38 @@ pimgF.onmouseout = function() {
 
 var cwrapper = document.querySelector(".contact-wrapper"),
     ctitle = document.querySelector(".con-title"),
-    ctitleline = document.querySelector(".con-line");
+    ctitleline = document.querySelector("#con-line"),
+    cresume = document.querySelector(".resume"),
+    cimg = document.querySelector(".img-wrapper"),
+    ctop = document.querySelector(".top");
 
+//contact loader and animations
+var conLoad = debounce(function() {
+    if (window.pageYOffset > row2.offsetTop/0.95) {
+        ctitle.style.transform = "translateX(0px)";
+        ctitle.style.opacity = "1";
+        ctitleline.style.transform = "translateX(0px)";
+        ctitleline.style.opacity = "1";
+    }
+    if (window.pageYOffset > row2.offsetTop/0.92) {
+        cresume.style.transform = "translateY(0px)";
+        cresume.style.opacity = "1";
+    } 
+    if (window.pageYOffset > row2.offsetTop/0.92) {
+        cimg.style.transform = "translateY(0px)";
+        cimg.style.opacity = "1";
+        ctop.style.transform = "translateY(0px)";
+        ctop.style.opacity = "1";
+    } 
+    
+}, 10, 1);
 
+window.addEventListener('scroll', conLoad);
+
+//scroll to home button
+ctop.onmouseover = function() { 
+    ctop.style.transform = "scale(1.1)";
+    ctop.style.transitionDuration = "0.3s";
+};
+ctop.onmouseout = function() { ctop.style.transform = "scale(1)"; };
+ctop.onclick = function() { home.scrollIntoView(); };
