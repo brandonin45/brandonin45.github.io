@@ -17,9 +17,11 @@ function func2() {
 
 function func3() {
     if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
-        scrollToSmoothly(document.querySelector("#about").offsetTop, 250);
+        scrollToSmoothly(document.querySelector("#about").offsetTop, 400);
     }
-    else { document.querySelector("#about").scrollIntoView(); }
+    else { 
+        document.querySelector("#about").scrollIntoView(); 
+    }
 }
 
 //smooth scrolling for all browsers
@@ -74,24 +76,49 @@ var homePos = home.offsetTop,
     contactPos = contact.offsetTop;
 
 //navbar scroll to section
-lhome.onclick = function() { 
-    scrollToSmoothly(home.offsetTop, 250);
+lhome.onclick = function() {
+    if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        scrollToSmoothly(home.offsetTop, 400);
+    }
+    else { 
+        home.scrollIntoView();
+    } 
     if (window.innerWidth < 480) { smallNav(); }
 };
-labout.onclick = function() { 
-    scrollToSmoothly(about.offsetTop, 250);
+labout.onclick = function() {
+    if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        scrollToSmoothly(about.offsetTop, 400);
+    }
+    else { 
+        about.scrollIntoView();
+    }  
      if (window.innerWidth < 480) { smallNav(); }
     };
 lquali.onclick = function() { 
-    scrollToSmoothly(quali.offsetTop, 250); 
+    if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        scrollToSmoothly(quali.offsetTop, 400);
+    }
+    else { 
+        quali.scrollIntoView();
+    } 
     if (window.innerWidth < 480) { smallNav(); }
 };
 lportfolio.onclick = function() { 
-    scrollToSmoothly(portfolio.offsetTop, 250);
+    if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        scrollToSmoothly(portfolio.offsetTop, 400);
+    }
+    else { 
+        portfolio.scrollIntoView();
+    } 
      if (window.innerWidth < 480) { smallNav(); }
     };
 lcontact.onclick = function() { 
-    scrollToSmoothly(contact.offsetTop, 250); 
+    if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        scrollToSmoothly(contact.offsetTop, 400);
+    }
+    else { 
+        contact.scrollIntoView();
+    } 
     if (window.innerWidth< 480) { smallNav(); }
 };
 
@@ -168,11 +195,11 @@ var flex = document.querySelector(".flex-nav");
 var link = document.querySelector(".link-wrap div");
 function smallNav() {
     console.log("hi");
-    if (flex.style.height === "175px") { 
+    if (flex.style.height === "180px") { 
         flex.style.height = "50px";
     }
     else { 
-        flex.style.height = "175px";
+        flex.style.height = "180px";
     }
     
 }
@@ -463,4 +490,11 @@ ctop.onmouseover = function() {
     ctop.style.transitionDuration = "0.3s";
 };
 ctop.onmouseout = function() { ctop.style.transform = "scale(1)"; };
-ctop.onclick = function() { home.scrollIntoView(); };
+ctop.onclick = function() { 
+    if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+        scrollToSmoothly(home.offsetTop, 400);
+    }
+    else { 
+        home.scrollIntoView();
+    } 
+};

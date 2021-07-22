@@ -13,17 +13,17 @@ body {
 }
 
 @media (min-width: 1px) { 
-	.text { font-size: 1rem; }
-	.highlight { font-size: 1.2rem; }
-	.scroll-div { 	
-		padding: 6px 6px 6px 10px;
-		margin-top: 15px;
-		border-width: 1px;
+	.text { font-size: 1.3rem; }
+	.highlight { font-size: 1.5rem; }
+	.scroll-div { 
+		padding: 8px 8px 8px 10px;
+		margin-top: 20px;
+		border-width: 2px;
 	}
 	.scroll-div i { 
-		font-size: 0.5rem;
-		padding-right: 8px;
-	 }
+		font-size: 0.7rem;
+		padding-right: 10px;
+	}
 	#arrow {
 		padding-right: 4px;
 		width: 0.3rem;
@@ -399,6 +399,7 @@ body {
 	position: relative;
 	z-index: 2;
 	height: 100vh;
+	max-height: 100vh;
 	align-items: center;
 	display: flex;
 	flex-direction: column;
@@ -899,6 +900,7 @@ body {
 
 	width: 100vw;
 	height: 100vh;
+	max-height: 100vh;
 	max-width: 100%;
 	flex-direction: column;
 }
