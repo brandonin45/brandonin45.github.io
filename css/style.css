@@ -402,14 +402,24 @@ body {
 	}
  } 
 
+.canvas-wrapper {
+	position: relative;
+	height: 100vh;
+	min-height: 100vh;
+	max-height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
 #canvas {
 	border-bottom: 1px solid black;
-
 	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
 }
 
 #intro-wrap {
-	position: relative;
 	z-index: 2;
 	height: 100vh;
 	min-height: 100vh;
