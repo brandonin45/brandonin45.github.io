@@ -920,6 +920,7 @@ body {
 }
 
 .contact-wrapper {
+	overflow: hidden;
 	display: flex;
 	justify-content: start;
 	align-items: center;
