@@ -17,7 +17,7 @@ function func2() {
 
 function func3() {
     // document.querySelector("#about").scrollIntoView();
-    scrollToSmoothly(document.querySelector("#about").offsetTop, 50);
+    scrollToSmoothly(document.querySelector("#about").offsetTop, 200);
     
 }
 
