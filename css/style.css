@@ -449,10 +449,12 @@ body {
 }
 
 .flex-nav {
+	overflow: hidden;
 	background-color: #1b242f;
 	height: 50px;
 	border-bottom: #15d7d0 3px solid;
 	transition: height 0.5s;
+	z-index: 99;
 }
 
 .link-wrap {
@@ -475,7 +477,7 @@ body {
 	position: fixed;
 	top: 0;
 	width: 100%;
-	animation-name: slideIn;
+	animation: slideIn;
 	animation-duration: 0.5s;
 	animation-timing-function: ease-out;
 	z-index: 99;
@@ -1047,4 +1049,8 @@ body {
 .a2 {
 	position: absolute;
 	top: 27px;
+}
+
+.overflow-wrap {
+	display: block;
 }

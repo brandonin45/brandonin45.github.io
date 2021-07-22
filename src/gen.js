@@ -194,7 +194,6 @@ function navEffect() {
 var flex = document.querySelector(".flex-nav");
 var link = document.querySelector(".link-wrap div");
 function smallNav() {
-    console.log("hi");
     if (flex.style.height === "180px") { 
         flex.style.height = "50px";
     }
