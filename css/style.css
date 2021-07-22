@@ -60,10 +60,10 @@ body {
 		top: 0;
 	}
 	#about {
-		padding-top: 1rem;
+		padding-top: 0.5rem;
 	}	
 	.about-wrapper {
-		margin-top: 2rem;
+		margin-top: 1rem;
 	}
 	.about-wrapper p {
 		margin: 0 10%;
