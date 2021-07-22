@@ -194,7 +194,7 @@ body {
 	}
 	.about-wrapper p {
 		margin: 0 10%;
-		font-size: 1rem;
+		font-size: 1.2rem;
 	}
 	.about-title {
 		font-size: 2.5rem;
@@ -507,6 +507,7 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	padding-bottom: 5rem;
 }
 
 .about-wrapper p {
@@ -546,7 +547,7 @@ body {
 }
 
  #quali {
-	padding-top: 5rem;
+	padding-top: 1rem;
 }
 
 .quali-wrapper {
@@ -673,7 +674,7 @@ body {
 	justify-content: center;
 	align-items: center;
 	padding-top: 5rem;
-	padding-bottom: 5rem;
+	padding-bottom: 3rem;
 
 	flex-direction: column;
 }

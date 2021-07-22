@@ -21,8 +21,9 @@ addEventListener('mousemove', event => {
 addEventListener('resize', () => {
   canvas.width = window.innerWidth;
   // canvas.height = window.innerHeight;
-
-  init();
+  if (h == window.innerHeight) {
+    init();
+  }
 })
 
 function randomIntfromRange(min, max) {
